@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_service_elements",
+  "info": {
+    "displayName": "Service element"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

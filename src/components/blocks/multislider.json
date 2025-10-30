@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_multisliders",
+  "info": {
+    "displayName": "Multislider"
+  },
+  "options": {},
+  "attributes": {
+    "multislider_element": {
+      "type": "component",
+      "component": "blocks.multislider-element",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

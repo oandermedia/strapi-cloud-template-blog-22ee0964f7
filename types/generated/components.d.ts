@@ -1,5 +1,82 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksMultislider extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_multisliders';
+  info: {
+    displayName: 'Multislider';
+  };
+  attributes: {
+    multislider_element: Schema.Attribute.Component<
+      'blocks.multislider-element',
+      true
+    >;
+  };
+}
+
+export interface BlocksMultisliderElement extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_multislider_elements';
+  info: {
+    displayName: 'Multislider element';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    short_description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksReferenceElement extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_reference_elements';
+  info: {
+    displayName: 'Reference element';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    link: Schema.Attribute.Component<'shared.link', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksReferences extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_references';
+  info: {
+    displayName: 'References';
+  };
+  attributes: {
+    reference_elements: Schema.Attribute.Component<
+      'blocks.reference-element',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksServiceElement extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_service_elements';
+  info: {
+    displayName: 'Service element';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    short_description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksServices extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_services';
+  info: {
+    displayName: 'Services';
+  };
+  attributes: {
+    service_elements: Schema.Attribute.Component<
+      'blocks.service-element',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutFooter extends Struct.ComponentSchema {
   collectionName: 'components_layout_footers';
   info: {
@@ -129,6 +206,12 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.multislider': BlocksMultislider;
+      'blocks.multislider-element': BlocksMultisliderElement;
+      'blocks.reference-element': BlocksReferenceElement;
+      'blocks.references': BlocksReferences;
+      'blocks.service-element': BlocksServiceElement;
+      'blocks.services': BlocksServices;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
       'layout.topbar': LayoutTopbar;

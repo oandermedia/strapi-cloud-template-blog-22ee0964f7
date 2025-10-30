@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_references",
+  "info": {
+    "displayName": "References"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "reference_elements": {
+      "type": "component",
+      "component": "blocks.reference-element",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
